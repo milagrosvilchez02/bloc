@@ -17,15 +17,19 @@ function closeEditor () {
 
 const saveNote = (event) => {
     if(event.target.outerText === 'SAVE'){
-        const saved = document.querySelector('#saved');
         const toSaveText = document.getElementById('text').value;
-        const toSaveContent = document.createElement('p');
-        toSaveContent.innerText = toSaveText;
-        saved.append(toSaveContent);
-        closeEditor();
-        console.log(event);
-    }
-}
+            if(toSaveText === '') window.alert('The note is empty!')
+            else{
+                const saved = document.querySelector('#saved');
+                const toSaveContent = document.createElement('p');
+                toSaveContent.id = 'individual'
+                toSaveContent.innerText = toSaveText;
+                saved.append(toSaveContent);
+                closeEditor();
+            }
+    } else if(event.target.outerText === 'BACK') closeEditor();
+ }
+
 
 
 // saveButton.addEventListener('click', saveNote);
@@ -50,8 +54,9 @@ const addInputs = () => {
     
     writingContainer.append(text); 
     writingContainer.append(options);
-    writingContainer.addEventListener('click', saveNote);
-
+    
     parent.append(writingContainer);
+    parent.addEventListener('click', saveNote);
 }
 startButton.addEventListener('click', addInputs);
+
