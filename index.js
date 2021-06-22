@@ -1,17 +1,30 @@
 const startButton = document.getElementById('start-button');
 const parent = document.getElementById('start-container');
+const writingContainer = document.getElementById('writing-container');
+
 
 const saveButton = document.getElementById('save');
 const backButton = document.getElementById('back');
 
+// function delegation(event){
+//     event.preventDefault();
+//     console.log(event.target);
+// }
 
+function closeEditor () {
+    writingContainer.innerText = '';
+}
 
-const saveNote = () => {
-    const saved = document.getElementById('saved');
-    const toSaveText = document.getElementById('text').value;
-    const toSaveContent = document.createElement('p');
-    toSaveContainer.innerText = toSaveText;
-    saved.append(toSaveContent);
+const saveNote = (event) => {
+    if(event.target.outerText === 'SAVE'){
+        const saved = document.querySelector('#saved');
+        const toSaveText = document.getElementById('text').value;
+        const toSaveContent = document.createElement('p');
+        toSaveContent.innerText = toSaveText;
+        saved.append(toSaveContent);
+        closeEditor();
+        console.log(event);
+    }
 }
 
 
@@ -20,32 +33,24 @@ const saveNote = () => {
 const addInputs = () => {
     const text = document.createElement('textarea');
     text.id = 'text';
-    text.placeholder = 'Write here...'
+    text.placeholder = 'Write here...';
 
     const back = document.createElement('button');
-    back.id = 'back';
-    back.innerText = 'Back';
+    back.className = 'options__back';
+    back.innerText = 'BACK';
 
     const save = document.createElement('button');
-    save.id = 'save';
-    save.innerText = 'Save';
-    
-
+    save.className = 'options__save';
+    save.innerText = 'SAVE';
 
     const options = document.createElement('div');
-    options.id = 'options';
+    options.className = 'options';
     options.append(back);
     options.append(save);
     
-    const writingContainer = document.createElement('form');
-    writingContainer.id = 'form';
     writingContainer.append(text); 
-    writingContainer.append(options)
-    writingContainer.addEventListener('click', (event) => {
-        if(event.target.nodeName === 'button') {
-            window.alert('hola');
-        }
-    })
+    writingContainer.append(options);
+    writingContainer.addEventListener('click', saveNote);
 
     parent.append(writingContainer);
 }

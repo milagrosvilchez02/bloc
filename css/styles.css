@@ -5,7 +5,7 @@ textarea
 
 body
 {
-    background-color: #afb9c8;
+    background-color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0px;
 }
@@ -37,7 +37,7 @@ body
 #start-button
 {
     align-items: center;
-    background-color: #caf7e3;
+    background-color: rgb(61, 61, 61);
     border: 2px solid black;
     border-radius: 20px;
     color: black;
@@ -63,8 +63,8 @@ body
     flex-direction: column;
     margin: 10px 5px;
 }
-
-#form
+/* 
+#writing-container
 {
     border-radius: 15px;
     background-color: black;
@@ -73,7 +73,7 @@ body
     align-items: center;
     height: 280px;
     flex-direction: column;
-}
+} */
 
 #text
 {
@@ -86,25 +86,40 @@ body
     border-radius: 15px;
     padding: 5px 0px 0px 5px;
     font-size: 20px;
+    border: 0px;
+    border-radius: 15px;
+    height: 200px;
+    color: white;
+    background-color: rgb(61, 61, 61);
 }
-#options
+.options
 {
     display: flex;
     justify-content: space-evenly;
     margin-top: 5px;
-    width: 94%;
-    height: 15%;
+    height: 35px;
 }
 
-#save
+.options__save
 {
     width: 40%;
     border-radius: 15px;
+    background-color: rgb(61, 61, 61);
+    color: orangered;
+    font-size: 20px;
 }
 
-#back
+.options__back
 {
     width: 40%;
+    background-color: rgb(61, 61, 61);
     border-radius: 15px;
+    color: orangered;
+    font-size: 20px;
 
+}
+
+#saved
+{
+    background-color: palevioletred;
 }
