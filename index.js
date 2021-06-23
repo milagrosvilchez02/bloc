@@ -7,29 +7,32 @@ const backButton = document.getElementById('back');
 
 var savedArray = [];
 var amount = savedArray.length;
+console.log(amount);
 
 function closeEditor () {
     writingContainer.innerText = '';
 }
 
 function determineId () {
-    savedArray.push(amount);
     amount++;
-    return amount;
+    return amount - 1;
 }
 
 const eventsOptions = (event) => {
     if(event.target.outerText === 'EDIT') {
         addInputs();
-        const editZone = document.getElementById('text');
-        const editingTextId = document.getElementById(event.target.parentNode.parentNode.id);
-        console.log(editingTextId);
-        // const editingTextContent = document.getElementById(editingTextId);
-        // editZone.value = editingTextContent;
+        let editZone = document.getElementById('text');
+        console.log(event)
+        let pos = document.getElementById('savedAndOptions');
+        
+        // let content = savedArray.indexOf(editClass);
+        // let editcontent = document.querySelector(editClass).value;
+        // editZone.value = editcontent;
     }
 }
 
 const optionsSaved = () => {
+    const savedContent = document.querySelector
     //agregar elementos para appendear con tosavecontent
     const edit = document.createElement('button');
     edit.id = 'edit';
@@ -57,11 +60,17 @@ const saveNote = (event) => {
             if(toSaveText === '') window.alert('The note is empty!')
             else{
                 const saved = document.querySelector('#saved');
+
                 const toSaveContent = document.createElement('p');
-                toSaveContent.id = `individual${determineId()}`;
+                toSaveContent.classList = `individual ${determineId()}`;
                 toSaveContent.innerText = toSaveText;
-                toSaveContent.append(optionsSaved())
-                saved.append(toSaveContent);
+
+                const containerSaved = document.createElement('div');
+                containerSaved.id = 'savedAndOptions'
+                containerSaved.append(toSaveContent);
+                containerSaved.append(optionsSaved())
+                saved.append(containerSaved);
+                savedArray.push(toSaveText);
                 closeEditor();
             }
     } else if(event.target.outerText === 'BACK') closeEditor();

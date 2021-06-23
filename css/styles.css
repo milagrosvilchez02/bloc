@@ -115,6 +115,11 @@ body
     justify-content: center;
 }
 
+#savedAndOptions
+{
+    display: flex;
+}
+
 p
 {
     background-color: rgb(61, 61, 61);
