@@ -63,17 +63,6 @@ body
     flex-direction: column;
     margin: 10px 5px;
 }
-/* 
-#writing-container
-{
-    border-radius: 15px;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 280px;
-    flex-direction: column;
-} */
 
 #text
 {
@@ -122,12 +111,11 @@ body
 #saved
 {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 7px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-#individual
+p
 {
     background-color: rgb(61, 61, 61);
     display: flex;
@@ -136,4 +124,10 @@ body
     color: white;
     padding: 10px;
     border-radius: 15px;
+}
+
+#options2
+{
+    display: flex;
+    justify-content: flex-end;
 }

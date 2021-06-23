@@ -2,17 +2,53 @@ const startButton = document.getElementById('start-button');
 const parent = document.getElementById('start-container');
 const writingContainer = document.getElementById('writing-container');
 
-
 const saveButton = document.getElementById('save');
 const backButton = document.getElementById('back');
 
-// function delegation(event){
-//     event.preventDefault();
-//     console.log(event.target);
-// }
+var savedArray = [];
+var amount = savedArray.length;
 
 function closeEditor () {
     writingContainer.innerText = '';
+}
+
+function determineId () {
+    savedArray.push(amount);
+    amount++;
+    return amount;
+}
+
+const eventsOptions = (event) => {
+    if(event.target.outerText === 'EDIT') {
+        addInputs();
+        const editZone = document.getElementById('text');
+        const editingTextId = document.getElementById(event.target.parentNode.parentNode.id);
+        console.log(editingTextId);
+        // const editingTextContent = document.getElementById(editingTextId);
+        // editZone.value = editingTextContent;
+    }
+}
+
+const optionsSaved = () => {
+    //agregar elementos para appendear con tosavecontent
+    const edit = document.createElement('button');
+    edit.id = 'edit';
+    edit.innerText = 'EDIT';
+
+    const delet = document.createElement('button');
+    delet.id = 'delet';
+    delet.innerText = 'DELETE';
+
+
+    const options2 = document.createElement('div');
+    options2.id = 'options2';
+    options2.append(delet);
+    options2.append(edit);
+
+    //agregar evento: apretar container y aparecer opciones 
+    options2.addEventListener('click', eventsOptions);
+    //agregar evento: de las opciones que aparezcan
+    return options2;
 }
 
 const saveNote = (event) => {
@@ -22,17 +58,14 @@ const saveNote = (event) => {
             else{
                 const saved = document.querySelector('#saved');
                 const toSaveContent = document.createElement('p');
-                toSaveContent.id = 'individual'
+                toSaveContent.id = `individual${determineId()}`;
                 toSaveContent.innerText = toSaveText;
+                toSaveContent.append(optionsSaved())
                 saved.append(toSaveContent);
                 closeEditor();
             }
     } else if(event.target.outerText === 'BACK') closeEditor();
- }
-
-
-
-// saveButton.addEventListener('click', saveNote);
+}
 
 const addInputs = () => {
     const text = document.createElement('textarea');
@@ -59,4 +92,3 @@ const addInputs = () => {
     parent.addEventListener('click', saveNote);
 }
 startButton.addEventListener('click', addInputs);
-
