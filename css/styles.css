@@ -5,40 +5,56 @@ textarea
 
 body
 {
-    background-color: white;
+    background-color: #f8beb0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0px;
 }
 
-
 .header
 {
     align-items: center;
-    background-color: #ce97b0;
+    background-color: #f38998;
     border-radius: 15px;
     display: flex;
-    height: 60px;
-    justify-content: center;
-    margin: 3px 5px;
+    justify-content: space-around;
+}
+
+#darkMode
+{
+    outline: none;
+    border: 2px solid blue;
+}
+
+#darkMode :hover 
+{
+    width: 40px;
+
 }
 
 .header__title
+{ 
+    display: flex;
+    height: 60px;
+    margin: 3px 5px;
+}
+
+.header__title--text
 {
+    display: flex;
+    align-items: center;
     color: rgb(0, 0, 0);
     font-size: 170%;
 }
 
-.header__img
+.header__title--img
 {
-    padding-right: 30px;
-    width: 40px;
+    width: 56;
 }
 
 #start-button
 {
     align-items: center;
-    background-color: rgb(61, 61, 61);
-    border: 2px solid black;
+    background-color: #f38998;
     border-radius: 20px;
     color: black;
     display: flex;
@@ -46,6 +62,7 @@ body
     justify-content: center;
     margin: 10px 5px;
     height: 60px;
+    border: none;
 }
 
 #start-button:hover
@@ -79,7 +96,11 @@ body
     border-radius: 15px;
     height: 200px;
     color: white;
-    background-color: rgb(61, 61, 61);
+    background-color: #f38998;
+    
+}
+#text::placeholder{
+    color: white
 }
 .options
 {
@@ -93,17 +114,17 @@ body
 {
     width: 40%;
     border-radius: 15px;
-    background-color: rgb(61, 61, 61);
-    color: orangered;
+    background-color: #f38998;
+    color: white;
     font-size: 20px;
 }
 
 .options__back
 {
     width: 40%;
-    background-color: rgb(61, 61, 61);
+    background-color: #f38998;
     border-radius: 15px;
-    color: orangered;
+    color: white;
     font-size: 20px;
 
 }
@@ -112,27 +133,57 @@ body
 {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
 }
 
 #savedAndOptions
 {
     display: flex;
+    background-color: #f38998;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    color: white;
 }
 
-p
+.individual
 {
-    background-color: rgb(61, 61, 61);
+    background-color: #f38998;
     display: flex;
     font-size: 20px;
     width: 91%;
     color: white;
-    padding: 10px;
+    padding: 15px;
     border-radius: 15px;
+    margin: 0px;
 }
 
 #options2
 {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 3px;
+    align-items: stretch;
+    padding-right: 15px;
+}
+
+#delet
+{
+    height: 46%;    
+    background-color: #f38998;
+    border-radius: 15px;
+    font-size: 20px;
+    border: 1px solid black;
+    margin-bottom: 2px;
+}
+
+#edit
+{
+    height: 46%;
+    background-color: #f38998;
+    border-radius: 15px;
+    border: none;
+    border: 1px solid black;
+    font-size: 20px;
 }
