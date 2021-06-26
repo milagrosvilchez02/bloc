@@ -19,18 +19,6 @@ body
     justify-content: space-around;
 }
 
-#darkMode
-{
-    outline: none;
-    border: 2px solid blue;
-}
-
-#darkMode :hover 
-{
-    width: 40px;
-
-}
-
 .header__title
 { 
     display: flex;
@@ -40,9 +28,9 @@ body
 
 .header__title--text
 {
-    display: flex;
     align-items: center;
     color: rgb(0, 0, 0);
+    display: flex;
     font-size: 170%;
 }
 
@@ -55,14 +43,14 @@ body
 {
     align-items: center;
     background-color: #f38998;
+    border: none;
     border-radius: 20px;
     color: black;
     display: flex;
     font-size: 30px;
+    height: 60px;
     justify-content: center;
     margin: 10px 5px;
-    height: 60px;
-    border: none;
 }
 
 #start-button:hover
@@ -70,7 +58,6 @@ body
     border: 4px solid black;
     cursor: pointer;
     font-weight: bold;
-    transition: all 50ms;
 }
 
 #start-container
@@ -83,49 +70,51 @@ body
 
 #text
 {
-    outline: none;
-    margin-top: 5px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    width: 98%;
-    height: 79%;
-    display: flex;
-    border-radius: 15px;
-    padding: 5px 0px 0px 5px;
-    font-size: 20px;
+    background-color: #f38998;
     border: 0px;
     border-radius: 15px;
-    height: 200px;
     color: white;
-    background-color: #f38998;
+    display: flex;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    height: 200px;
+    margin-top: 5px;
+    outline: none;
+    padding: 5px 0px 0px 5px;
+    width: 98%;
     
 }
+
 #text::placeholder{
     color: white
 }
+
+
+
 .options
 {
     display: flex;
+    height: 35px;
     justify-content: space-evenly;
     margin-top: 5px;
-    height: 35px;
 }
 
 .options__save
 {
-    width: 40%;
-    border-radius: 15px;
     background-color: #f38998;
+    border-radius: 15px;
     color: white;
     font-size: 20px;
+    width: 40%;
 }
 
 .options__back
 {
-    width: 40%;
     background-color: #f38998;
     border-radius: 15px;
     color: white;
     font-size: 20px;
+    width: 40%;
 
 }
 
@@ -139,51 +128,50 @@ body
 
 #savedAndOptions
 {
-    display: flex;
     background-color: #f38998;
     border-radius: 15px;
-    margin-bottom: 5px;
     color: white;
+    display: flex;
+    margin-bottom: 5px;
 }
 
 .individual
 {
     background-color: #f38998;
+    border-radius: 15px;
+    color: white;
     display: flex;
     font-size: 20px;
-    width: 91%;
-    color: white;
-    padding: 15px;
-    border-radius: 15px;
     margin: 0px;
+    padding: 15px;
+    width: 91%;
 }
 
 #options2
 {
+    align-items: stretch;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 3px;
-    align-items: stretch;
     padding-right: 15px;
 }
 
 #delet
 {
-    height: 46%;    
     background-color: #f38998;
+    border: 1px solid black;
     border-radius: 15px;
     font-size: 20px;
-    border: 1px solid black;
+    height: 46%;    
     margin-bottom: 2px;
 }
 
 #edit
 {
-    height: 46%;
     background-color: #f38998;
-    border-radius: 15px;
-    border: none;
     border: 1px solid black;
+    border-radius: 15px;
     font-size: 20px;
+    height: 46%;
 }

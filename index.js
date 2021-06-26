@@ -1,7 +1,7 @@
 const startButton = document.getElementById('start-button');
 const parent = document.getElementById('start-container');
 const edit = document.getElementsByClassName('edit');
-const imputs = document.getElementsByClassName('options')
+const imputs = document.getElementsByClassName('options');
 const writingContainer = document.getElementById('writing-container');
 const darkMode = document.getElementById('darkMode');
 
@@ -14,9 +14,9 @@ function determineId () {
     return amount - 1;
 }
 
+//opciones de editar nota o eliminarla
 const optionsSaved = () => {
     const savedContent = document.querySelector
-    //agregar elementos para appendear con tosavecontent
     const edit = document.createElement('button');
     edit.id = 'edit';
     edit.innerText = 'EDIT';
@@ -45,6 +45,7 @@ const optionsSaved = () => {
     return options2;
 }
 
+//guarda la nota o la elimina
 const saveNote = (event) => {
     if(event.target.outerText === 'SAVE'){
         const toSaveText = document.getElementById('text').value;
@@ -57,15 +58,16 @@ const saveNote = (event) => {
                 toSaveContent.innerText = toSaveText;
 
                 const containerSaved = document.createElement('div');
-                containerSaved.id = 'savedAndOptions'
+                containerSaved.id = 'savedAndOptions';
                 containerSaved.append(toSaveContent);
-                containerSaved.append(optionsSaved())
+                containerSaved.append(optionsSaved());
                 saved.append(containerSaved);
                 closeEditor();
             }
     } else if(event.target.outerText === 'BACK') closeEditor();
 }
 
+//añade espacio para escribir
 const addInputs = () => {
     if(document.getElementById('text') === null){
 
@@ -96,9 +98,3 @@ const addInputs = () => {
 }
 
 startButton.addEventListener('click', addInputs);
-
-function changeColors () {
-    console.log(startButton.style.backgroundColor)
-} 
-
-darkMode.addEventListener('click', changeColors);
